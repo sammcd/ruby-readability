@@ -270,11 +270,7 @@ module Readability
 
           # Otherwise, replace the element with its contents
         else
-          if replace_with_whitespace[el.node_name]
-            el.swap(Nokogiri::XML::Text.new(' ' << el.text << ' ', el.document))
-          else
-            el.swap(Nokogiri::XML::Text.new(el.text, el.document))
-          end
+          el.swap(Nokogiri::XML::Text.new(el.text, el.document))
         end
 
       end
